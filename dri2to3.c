@@ -35,8 +35,6 @@
 
 #include <drm.h>
 #include <drm_mode.h>
-#include <xcb/xproto.h>
-#include <xcb/xcbext.h>
 #include <xcb/present.h>
 #include <xcb/dri2.h>
 #include <xcb/dri3.h>
