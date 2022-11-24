@@ -9,10 +9,11 @@ add_project_arguments('-Wno-unused-parameter', language : ['c'])
 dl = cc.find_library('dl', required : false)
 xcb = dependency('xcb')
 xcb_present = dependency('xcb-present')
+xcb_dri2 = dependency('xcb-dri2').partial_dependency(compile_args : true, includes : true)
 xcb_dri3 = dependency('xcb-dri3')
 libdrm = dependency('libdrm').partial_dependency(compile_args : true, includes : true)
 
 shared_library('dri2to3',
                'dri2to3.c',
-               dependencies : [dl, xcb, xcb_present, xcb_dri3, libdrm],
+               dependencies : [dl, xcb, xcb_present, xcb_dri2, xcb_dri3, libdrm],
                install : true)
